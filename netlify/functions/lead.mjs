@@ -61,7 +61,7 @@ export default async (req) => {
     ["Plan", d.plan], ["Interest", d.interest],
     ["Property", [d.street, d.city, d.zip].filter(Boolean).join(", ")],
     ["Message", d.message],
-    ["SMS consent", smsConsent ? `YES — ${new Date().toISOString()}` : "NO (do not text)"],
+    ["SMS consent", smsConsent ? `YES — phone provided with opt-in disclosure, ${new Date().toISOString()}` : "NO phone provided (do not text)"],
     ["Consent language shown", d.consentText],
     ["Page", d.pageUrl], ["Landing page", d.landing], ["Referrer", d.referrer],
     ["UTM", [d.utm_source, d.utm_medium, d.utm_campaign].filter(Boolean).join(" / ")],
