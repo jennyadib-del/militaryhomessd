@@ -1,0 +1,23 @@
+[build]
+  command = "python3 build.py"
+  publish = "public"
+  functions = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Send www to the bare domain
+[[redirects]]
+  from = "https://www.militaryhomessd.com/*"
+  to = "https://militaryhomessd.com/:splat"
+  status = 301
+  force = true

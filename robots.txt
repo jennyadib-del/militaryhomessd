@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pcs-guide/
+
+Sitemap: https://militaryhomessd.com/sitemap.xml
