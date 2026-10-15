@@ -97,13 +97,12 @@ def C(key):
 # Lead forms (Follow Up Boss + carrier SMS compliant)
 # ---------------------------------------------------------------------------
 def consent_block(fid):
+    # FUB / carrier rule: phone is optional and there is NO opt-in checkbox,
+    # so no visitor ever has to agree to texts to submit a form.
     biz = esc(C("LEGAL_BUSINESS_NAME"))
     return f"""
-      <div class="consent">
-        <input type="checkbox" id="{fid}-sms" name="sms_consent" value="yes">
-        <label for="{fid}-sms">I agree to be contacted by {biz} via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms/">Terms &amp; Conditions</a>.</label>
-      </div>
-      <p class="consent-note">Checking the box is optional and is not required to submit this form or to work with me. Your information is never sold or shared with third parties for marketing.</p>"""
+      <p class="consent" id="{fid}-consent">I agree to be contacted by {biz} via call, email, and text for real estate services. To opt out, you can reply 'stop' at any time or reply 'help' for assistance. You can also click the unsubscribe link in the emails. Message and data rates may apply. Message frequency may vary. <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms/">Terms &amp; Conditions</a>.</p>
+      <p class="consent-note">Your phone number is optional. Your information is never sold or shared with third parties for marketing.</p>"""
 
 
 def base_fields(fid):
