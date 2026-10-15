@@ -306,9 +306,7 @@ p { margin: 0 0 var(--s3); }
 .field-error { color: var(--error); font-size: .85rem; min-height: 0; }
 .field-error:empty { display: none; }
 .hint { color: var(--muted); font-size: .82rem; }
-.consent { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; margin: var(--s3) 0; }
-.consent input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--link); cursor: pointer; }
-.consent label { font-weight: 400 !important; font-size: .82rem !important; letter-spacing: 0 !important; line-height: 1.55; color: var(--stone) !important; cursor: pointer; }
+.consent { margin: var(--s3) 0 0; font-size: .82rem; line-height: 1.55; color: var(--stone); }
 .consent-note { font-size: .78rem; line-height: 1.55; color: var(--muted); margin: var(--s2) 0 var(--s4); }
 .lead-form .btn { width: 100%; }
 .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
