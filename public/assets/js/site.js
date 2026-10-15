@@ -152,8 +152,9 @@
       data.formType = form.dataset.formType;
       data.pageUrl = location.href;
       data.pageTitle = document.title;
-      data.smsConsent = !!(form.sms_consent && form.sms_consent.checked);
-      data.consentText = form.querySelector('.consent label').textContent.replace(/\s+/g, ' ').trim();
+      // No checkbox: a visitor who chooses to give a phone number has seen the opt-in language above the button
+      data.smsConsent = !!data.phone;
+      data.consentText = form.querySelector('.consent').textContent.replace(/\s+/g, ' ').trim();
       try {
         ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'landing', 'referrer'].forEach(function (k) {
           var v = sessionStorage.getItem(k); if (v) data[k] = v;
